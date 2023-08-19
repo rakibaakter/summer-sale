@@ -19,16 +19,21 @@ function addToCard(target){
     const productPrice = getValuebyId(productPriceElement);
     // previous total price
     const previousTotalPrice = getValuebyId(document.getElementById('previous-total-price'));
-    console.log(previousTotalPrice)
+    // previous  price
+    // const previousPrice = getValuebyId(document.getElementById('previous-price'));
     
     // new price added
     const newTotalPrice = previousTotalPrice + productPrice;
-    document.getElementById('previous-total-price').innerText = newTotalPrice;
-    // activate buttons
-    if(newTotalPrice >= 200){
-        document.getElementById('purchase-btn').removeAttribute('disabled');
-        document.getElementById('coupon-btn').removeAttribute('disabled');
+    document.getElementById('previous-total-price').innerText = newTotalPrice.toFixed(2);
+    document.getElementById('previous-price').innerText = newTotalPrice.toFixed(2);
 
+    // activate buttons purchase for any price and coupon for up to 200
+    if(newTotalPrice >= 0){
+        document.getElementById('purchase-btn').removeAttribute('disabled');
+    }
+    if(newTotalPrice >= 200){
+        document.getElementById('coupon-code-id').removeAttribute('disabled');
+        document.getElementById('coupon-btn').removeAttribute('disabled');
     }
     // add to list 
     const listElemet = document.getElementById('list-items');
@@ -41,7 +46,22 @@ function addToCard(target){
 }
 
 // coupon apply
-const couponBtn = document.getElementById('coupon-btn')
-while(couponBtn){
-    console.log(event)
-}
+document.getElementById('coupon-btn').addEventListener('click', function(){
+    const couponCodeELement = document.getElementById('coupon-code-id');
+    const couponCode = couponCodeELement.value;
+    if(couponCode !== 'SELL200'){
+        alert("your coupon is not valid !");
+        couponCodeELement.value = "";
+        return;
+    }
+    // previous total price
+    const previousTotalPrice = getValuebyId(document.getElementById('previous-total-price'));
+    // previous discount price
+    const previousDiscountPrice = getValuebyId(document.getElementById('previous-total-discount'));
+    // new discount price added
+    const newDiscountPrice = (previousTotalPrice * 20)/100;
+    document.getElementById('previous-total-discount').innerText = newDiscountPrice.toFixed(2);
+    // set new price
+    const newPrice = previousTotalPrice - newDiscountPrice ;
+    document.getElementById('previous-price').innerText = newPrice.toFixed(2);
+})
