@@ -75,3 +75,19 @@ document.getElementById('reset-btn').addEventListener('click', function(){
     const listElement = document.getElementById('list-items');
     listElement.innerHTML = " ";
 })
+// 
+function showList(){
+    const listItemId = document.getElementById('card-list');
+    listItemId.style.width = '300px';
+    listItemId.style.background = 'white';
+    listItemId.style.padding = '25px 10px';
+    listItemId.style.position = 'fixed';
+    listItemId.style.zIndex = '10';
+    listItemId.style.top = '40px';
+    listItemId.style.right = '0px';
+
+
+
+    listItemId.style.display = 'block'
+
+}
