@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en ">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,66 @@
 
     <!-- daisy ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- customized tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    //   colors: {
+                    //     clifford: '#da373d',
+                    //   }
+                    backgroundImage: {
+                        'bannerImg': "url('./images/Summer 1.png')",
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+<!-- <img src="./images/Summer 1.png" alt="" srcset=""> -->
 <body>
-  <h2>hello</h2>
-    
+    <!-- small device header -->
+    <header class="bg-[#F9F6E2] px-2 py-4 md:hidden">
+        <div class="">
+            <div class="hero flex flex-col">
+                <div>
+                    <img src="./images/Summer 1.png" alt="" srcset="">
+                </div>
+                <div class="hero-content text-center text-black lg:pl-24">
+                    <div class="space-y-8">
+                        <h3 class="text-3xl font-medium">---SALE FEVER---</h3>
+                        <h1 class="text-5xl font-bold">Purchase TK 200 or 
+                            <br>above & get 
+                            <span class="text-secondary">20% off</span></h1>
+                        <span class="text-2xl font-semibold">Use Promo Code</span>
+                        <button class="btn btn-secondary text-2xl font-semibold">SELL200</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </header>
+    <!-- medium to large device header -->
+    <header class="bg-[#F9F6E2] px-2 md:px-5 lg:px-40 py-4 lg:py-20 hidden md:block">
+        <div class=" bg-bannerImg bg-no-repeat md:bg-[length:200px_350px] md:bg-[center_right_3rem] lg:bg-[center_right_12rem] lg:bg-[length:500px_350px]">
+            <div class="hero flex">
+                <div class="hero-content text-center text-black lg:pl-24">
+                    <div class="space-y-8">
+                        <h3 class="text-3xl font-medium">---SALE FEVER---</h3>
+                        <h1 class="text-5xl font-bold">Purchase TK 200 or 
+                            <br>above & get 
+                            <span class="text-secondary">20% off</span></h1>
+                        <span class="text-2xl font-semibold">Use Promo Code</span>
+                        <button class="btn btn-secondary text-2xl font-semibold">SELL200</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </header>
+
     <!-- interacted js file -->
     <script src="./js/script.js"></script>
 </body>
+
 </html>
