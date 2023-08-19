@@ -36,13 +36,13 @@ function addToCard(target){
         document.getElementById('coupon-btn').removeAttribute('disabled');
     }
     // add to list 
-    const listElemet = document.getElementById('list-items');
-    const count = listElemet.childElementCount + 1;
+    const listElement = document.getElementById('list-items');
+    const count = listElement.childElementCount + 1;
     const p = document.createElement('p');
     const list = count + " " + productTitle;
     p.innerText = `${count}  ${productTitle}`;
     p.style.fontWeight = 'bold';
-    listElemet.appendChild(p);
+    listElement.appendChild(p);
 }
 
 // coupon apply
@@ -64,4 +64,14 @@ document.getElementById('coupon-btn').addEventListener('click', function(){
     // set new price
     const newPrice = previousTotalPrice - newDiscountPrice ;
     document.getElementById('previous-price').innerText = newPrice.toFixed(2);
+})
+// reset card history
+document.getElementById('reset-btn').addEventListener('click', function(){
+    document.getElementById('previous-total-price').innerText = "0.00";
+    document.getElementById('previous-price').innerText = "0.00";
+    document.getElementById('previous-price').innerText = "0.00";
+
+    // list clear
+    const listElement = document.getElementById('list-items');
+    listElement.innerHTML = " ";
 })
