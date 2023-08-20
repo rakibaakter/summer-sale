@@ -296,7 +296,10 @@
         <!-- for small devices card list in a card icon -->
         <div class="fixed top-10 right-0 p-2 block md:hidden"  >
             <details class="dropdown mb-32 relative">
-                <summary class="m-1 btn" onclick="showList()"> <i class="fa-solid fa-cart-shopping text-3xl "></i></summary>
+                <summary class="m-1 btn relative" onclick="showList()">
+                     <i class="fa-solid fa-cart-shopping text-3xl "></i>
+                     <span class="indicator-item badge badge-secondary absolute -top-2 right-0" id="item-counter">0</span>
+                </summary>
                 <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box absolute right-0">
                   <li id="hidden-list">
 

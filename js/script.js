@@ -40,6 +40,9 @@ function addToCard(target){
     p.innerText = `${count}  ${productTitle}`;
     p.style.fontWeight = 'bold';
     listElement.appendChild(p);
+
+    // small device indicator for item count
+    document.getElementById('item-counter').innerText = count;
 }
 
 // coupon apply
@@ -78,7 +81,7 @@ document.getElementById('reset-btn').addEventListener('click', function(){
     const couponCodeELement = document.getElementById('coupon-code-id');
     couponCodeELement.value = "";
 })
-// 
+// for small devices
 function showList(){
     cardListElement = document.getElementById('card-list-body');
     cardListElement.style.display = 'block'
