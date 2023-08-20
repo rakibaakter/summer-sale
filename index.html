@@ -242,61 +242,69 @@
                             <p class="text-gray-500 font-bold"><span>339.00</span> TK</p>
                         </div>
                     </div>
-                    
-
                 </div>
             </div>
 
             <!-- list container -->
-            <div class="lg:pt-20 ml-5 space-y-8 " id="card-list">
-                <!-- coupon container -->
-                <div class="bg-base-100 shadow-xl p-4">
-                    <h2 class="text-center text-2xl font-bold mb-5">Have A Coupon?</h2>
-                    <div class="flex">
-                        <input type="text" class="pl-4 py-3 border border-gray" placeholder="Coupon code"
-                            id="coupon-code-id" disabled="disabled">
-                        <button class="btn btn-secondary text-xl font-semibold normal-case" disabled="disabled"
-                            id="coupon-btn">Apply</button>
+            <div class="hidden md:block" id="card-list-body">
+                <div class="flex flex-col md:pt-20 ml-5 space-y-8" id="card-list">
+                    <!-- coupon container -->
+                    <div class="bg-base-100 shadow-xl p-2 md:p-4">
+                        <h2 class="text-center text-2xl font-bold mb-5">Have A Coupon?</h2>
+                        <div class="flex">
+                            <input type="text" class="pl-2 md:p-4 py-3 border border-gray" placeholder="Coupon code"
+                                id="coupon-code-id" disabled="disabled">
+                            <button class="btn btn-secondary text-xl font-semibold normal-case" disabled="disabled"
+                                id="coupon-btn">Apply</button>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- list container Dynamic HTML -->
-                <div class="space-y-2 bg-base-100 shadow-xl p-4" id="list-items">
-
-                </div>
-                <!-- Price-->
-                <div class="space-y-8 bg-base-100 shadow-xl p-4">
-                    <div class="space-y-2">
-                        <p class="text-gray-700 font-bold">Total Price : <span class="text-gray-500"
-                                id="previous-total-price">0.00</span> TK</p>
-                        <p class="text-gray-700 font-bold">Discount : <span class="text-gray-500"
-                                id="previous-total-discount">0.00</span> TK</p>
-                        <p class="text-gray-700 font-bold">Price : <span class="text-gray-500"
-                                id="previous-price">0.00</span> TK</p>
+                    
+                    <!-- list container Dynamic HTML -->
+                    <div class="space-y-2 bg-base-100 shadow-xl p-2 md:p-4" id="list-items">
+    
                     </div>
-                    <hr>
-                    <button class="btn btn-secondary text-xl font-semibold w-full md:w-1/3 lg:w-full normal-case"
-                        disabled="disabled" id="purchase-btn" onclick="my_modal_1.showModal()">Make Purchase</button>
-                    <dialog id="my_modal_1" class="modal text-center">
-                        <form method="dialog" class="modal-box">
-                            <img src="./images/congo.png" alt="" class="mx-auto">
-                            <h3 class="font-bold text-lg">Congratulations!</h3>
-                            <p class="py-4">Your Purchase the product</p>
-                            <div class="modal-action">
-                                <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn btn-secondary text-xl font-semibold  normal-case mx-auto"
-                                    id="reset-btn">Go Home</button>
-                            </div>
-                        </form>
-                    </dialog>
+                    <!-- Price-->
+                    <div class="space-y-8 bg-base-100 shadow-xl p-4">
+                        <div class="space-y-2">
+                            <p class="text-gray-700 font-bold">Total Price : <span class="text-gray-500"
+                                    id="previous-total-price">0.00</span> TK</p>
+                            <p class="text-gray-700 font-bold">Discount : <span class="text-gray-500"
+                                    id="previous-total-discount">0.00</span> TK</p>
+                            <p class="text-gray-700 font-bold">Price : <span class="text-gray-500"
+                                    id="previous-price">0.00</span> TK</p>
+                        </div>
+                        <hr>
+                        <button class="btn btn-secondary text-xl font-semibold w-full md:w-1/3 lg:w-full normal-case"
+                            disabled="disabled" id="purchase-btn" onclick="my_modal_1.showModal()">Make Purchase</button>
+                        <dialog id="my_modal_1" class="modal text-center">
+                            <form method="dialog" class="modal-box">
+                                <img src="./images/congo.png" alt="" class="mx-auto">
+                                <h3 class="font-bold text-lg">Congratulations!</h3>
+                                <p class="py-4">Your Purchase the product</p>
+                                <div class="modal-action">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn btn-secondary text-xl font-semibold  normal-case mx-auto"
+                                        id="reset-btn">Go Home</button>
+                                </div>
+                            </form>
+                        </dialog>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- for small devices card list in a card icon -->
-        <!-- <div class="fixed top-10 right-0 p-2 rounded-full border border-secondary block md:hidden cursor-pointer" onclick="showList()" id="small-list">
-            <i class="fa-solid fa-cart-shopping text-3xl "></i>
-        </div> -->
+        <div class="fixed top-10 right-0 p-2 block md:hidden"  >
+            <details class="dropdown mb-32 relative">
+                <summary class="m-1 btn" onclick="showList()"> <i class="fa-solid fa-cart-shopping text-3xl "></i></summary>
+                <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box absolute right-0">
+                  <li id="hidden-list">
+
+                  </li>
+                </ul>
+            </details>
+        </div>
+        
     </main>
 
     <!-- interacted js file -->

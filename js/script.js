@@ -19,9 +19,6 @@ function addToCard(target){
     const productPrice = getValuebyId(productPriceElement);
     // previous total price
     const previousTotalPrice = getValuebyId(document.getElementById('previous-total-price'));
-    // previous  price
-    // const previousPrice = getValuebyId(document.getElementById('previous-price'));
-    
     // new price added
     const newTotalPrice = previousTotalPrice + productPrice;
     document.getElementById('previous-total-price').innerText = newTotalPrice.toFixed(2);
@@ -83,14 +80,7 @@ document.getElementById('reset-btn').addEventListener('click', function(){
 })
 // 
 function showList(){
-    const listItemId = document.getElementById('card-list');
-    // listItemId.style.width = '300px';
-    // listItemId.style.background = 'white';
-    // listItemId.style.padding = '25px 10px';
-    // listItemId.style.position = 'fixed';
-    // listItemId.style.zIndex = '10';
-    // listItemId.style.top = '60px';
-    // listItemId.style.right = '0px';
-    listItemId.style.display = 'block';
-
+    cardListElement = document.getElementById('card-list-body');
+    cardListElement.style.display = 'block'
+    document.getElementById('hidden-list').appendChild(cardListElement);
 }
