@@ -80,6 +80,7 @@ document.getElementById('reset-btn').addEventListener('click', function(){
     document.getElementById('coupon-btn').setAttribute('disabled', false);
     const couponCodeELement = document.getElementById('coupon-code-id');
     couponCodeELement.value = "";
+    document.getElementById('item-counter').innerText = '0';
 })
 // for small devices
 function showList(){
